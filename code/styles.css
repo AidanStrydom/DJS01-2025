@@ -1,0 +1,45 @@
+
+/* ========================
+   Header Styling
+======================== */
+.header {
+  display: flex;                  /* Align items in a row */
+  align-items: center;            /* Vertically center elements */
+  justify-content: space-between; /* Space out elements */
+  background-color: white;      
+  color: black;
+  padding: 10px 20px;             /* Space around content */
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+/* Style the title */
+.header h1 {
+  font-size: 24px;
+  margin: 0;
+  flex-grow: 1;                   /* Makes it take available space */
+  text-align: left;             
+}
+
+/* Left and right icons */
+.header img {
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+/* Search button */
+.header button {
+  background: none;
+  border: none;
+  color: black;
+  font-size: 20px;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+
+
+.filters{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
