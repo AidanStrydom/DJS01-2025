@@ -20,7 +20,7 @@
 
           <!-- Main content area -->
             
-    <main class="content">
+       <main class="content">
    
             <section class="filters">
                 <p>Filter by:</p>
@@ -43,10 +43,20 @@
 
             <section class="modals" id="modals"></section>   
 
-    </main>      
+            <!-- Modal overlay -->
+            <div id="podcast-modal" class="podcast-modal hidden">
+            <div class="modal-content">
+                <span class="close-btn">&times;</span>
+                <img id="modal-image" src="" alt="Podcast Cover">
+                <h2 id="modal-title"></h2>
+                <p id="modal-description"></p>
+                <p id="modal-genres"></p>
+                <p id="modal-seasons"></p>
+                <div id="modal-episodes"></div>
+            </div>
+            </div>
 
-       
+      </main>      
 
-     
   </body>
 </html>
