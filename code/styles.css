@@ -84,20 +84,23 @@ body {
 
 
 /* ===== Modals ===== */
+/* Container for all podcast cards */
 .modals {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  padding: 0 20px 20px 20px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 cards per row */
+  gap: 20px; /* space between cards */
+  padding: 20px;
 }
 
+/* Individual modal card */
 .modal-card {
   background: white;
   border-radius: 12px;
-  display: flex;
-  gap: 20px;
-  padding: 20px;
+  padding: 15px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
   transition: transform 0.2s;
 }
 
@@ -106,10 +109,12 @@ body {
 }
 
 .modal-card img {
-  width: 150px;
-  height: 150px;
-  border-radius: 10px;
-  object-fit: cover;
+  width: 100%;         /* full width of card */
+  height: 180px;       
+  object-fit: cover;   /* crops image */
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+  display: block;      
 }
 
 .modal-info {
@@ -125,6 +130,10 @@ body {
 .modal-info p {
   margin: 0;
   color: #444;
+  overflow: hidden;           /* Hide extra text */
+  display: -webkit-box;       /* Needed for line clamp */
+  -webkit-line-clamp: 3;      /* Show only 3 lines */
+  -webkit-box-orient: vertical;
 }
 
 .modal-meta {
@@ -173,4 +182,16 @@ body {
   right: 15px;
   font-size: 28px;
   cursor: pointer;
+}
+
+@media (max-width: 900px) {
+  .modals {
+    grid-template-columns: repeat(2, 1fr); /* 2 per row */
+  }
+}
+
+@media (max-width: 600px) {
+  .modals {
+    grid-template-columns: 1fr; /* 1 per row */
+  }
 }
