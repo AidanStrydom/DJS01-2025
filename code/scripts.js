@@ -60,6 +60,15 @@ function openPodcastModal(podcast) {
   podcastModal.classList.remove("hidden");
 }
 
+//genre event listener
+genre.addEventListener("change", () => {
+  const selectedGenre = Number(genre.value);
+  console.log("Selected genre:", selectedGenre);
+  const filteredPodcasts = selectedGenre === 0? podcasts : podcasts.filter(p => p.genres.includes(selectedGenre));
+  renderPodcastModals(filteredPodcasts);
+}); 
+
+
 // Close modal on X
 closeBtn.addEventListener("click", () => {
   podcastModal.classList.add("hidden");
